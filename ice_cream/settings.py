@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'corsheaders',
     'modeltranslation',
     'rest_framework',
-    'drf_yasg',
     'rest_framework_simplejwt',
 ]
 

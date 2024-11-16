@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Ice Cream</title>
+    <style>
+        :root {
+            --font-family-sans-serif: "Poppins", sans-serif;
+            --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+
+        body {
+            font-family: var(--font-family-sans-serif);
+            background: linear-gradient(135deg, #F195B2, #17a2b8);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .register-container {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 25px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            width: 420px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 5px solid #F195B2;
+        }
+
+        .register-container h1 {
+            font-family: var(--font-family-sans-serif);
+            font-size: 32px;
+            color: #17a2b8;
+            margin-bottom: 20px;
+        }
+
+        .register-container img {
+            width: 70px;
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+
+        .register-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .register-container input {
+            font-size: 16px;
+            padding: 12px 15px;
+            border: 2px solid #F195B2;
+            border-radius: 30px;
+            outline: none;
+            transition: all 0.4s ease;
+            background-color: #f5f5f5;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .register-container input:focus {
+            border-color: #17a2b8;
+            background-color: #fff;
+            box-shadow: 0 0 8px rgba(23, 162, 184, 0.4);
+        }
+
+        .register-container button {
+            background: linear-gradient(135deg, #17a2b8, #F195B2);
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px;
+            padding: 15px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+
+        .register-container button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(23, 162, 184, 0.3);
+            background: linear-gradient(135deg, #F195B2, #17a2b8);
+        }
+
+        .register-container p {
+            font-size: 14px;
+            color: #666;
+            margin-top: 15px;
+        }
+
+        .register-container p a {
+            color: #17a2b8;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .register-container p a:hover {
+            color: #F195B2;
+        }
+
+        /* Home Button */
+        .register-container .home-btn {
+            background: #17a2b8;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            padding: 15px 30px;
+            cursor: pointer;
+            margin-top: 25px;
+            opacity: 1;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+
+        /* Hover Effect for Home Button */
+        .register-container .home-btn:hover {
+            background: #F195B2;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(23, 162, 184, 0.3);
+        }
+
+        /* Additional hover animation */
+        .register-container .home-btn:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(23, 162, 184, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <img src="https://img.icons8.com/color/96/ice-cream-cone.png" alt="Ice Cream Icon">
+        <h1>Create an Account</h1>
+        <form action="/register" method="POST">
+            <input type="text" name="username" placeholder="Your Sweet Username" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+            <button type="submit">Get Your Ice Cream!</button>
+        </form>
+        <p>Already have an account? <a href="{% url 'login_page' %}">Login here</a></p>
+
+        <!-- Home Button (Always visible now) -->
+        <button class="home-btn" onclick="window.location.href='{% url 'home_page' %}'">Back to Home</button>
+    </div>
+</body>
+</html>
